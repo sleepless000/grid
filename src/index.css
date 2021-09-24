@@ -1,0 +1,17 @@
+* {
+  font-family: "Ubuntu", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#application {
+  padding: 1rem;
+}
+
+#application--header {
+  padding-bottom: 1rem;
+}
+
+#application--grid {
+  height: 600px;
+}
