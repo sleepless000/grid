@@ -11,6 +11,8 @@ const Application = () => {
     page,
     rowData,
     rowsPerPage,
+    filteredCount,
+    onFilterChanged,
     handleGridReady,
     handleChangePage,
     handleChangeRowsPerPage,
@@ -36,6 +38,7 @@ const Application = () => {
           paginationPageSize={rowsPerPage}
           suppressPaginationPanel={true}
           suppressScrollOnNewData={true}
+          onFilterChanged={onFilterChanged}
         >
           <AgGridColumn field="firstName" headerName="First Name" />
           <AgGridColumn field="lastName" headerName="Last Name" />
@@ -49,7 +52,7 @@ const Application = () => {
             borderBottom: "unset",
           }}
           rowsPerPageOptions={[5, 10, 25, 50, 100, { label: "All", value: -1 }]}
-          count={rowData.length}
+          count={filteredCount ?? rowData.length}
           rowsPerPage={rowsPerPage}
           page={page}
           SelectProps={{
